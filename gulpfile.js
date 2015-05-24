@@ -3,10 +3,14 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var watch = require('gulp-watch');
+
 var minifyCss = require('gulp-minify-css');
 var less = require('gulp-less');
 var LessPluginAutoPrefix = require('less-plugin-autoprefix');
 var autoprefix = new LessPluginAutoPrefix({ browsers: ['last 2 versions'] });
+
+var minifyHtml = require('gulp-minify-html');
+
 var livereload = require('gulp-livereload');
 var server = require('gulp-webserver');
 
@@ -54,6 +58,7 @@ gulp.task('js', function() {
 
 gulp.task('html', function() {
   return gulp.src('src/*.html')
+    .pipe(minifyHtml())
     .pipe(gulp.dest('dist'))
     .pipe(livereload());
 });
