@@ -1,4 +1,4 @@
-/*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
+/*! Based on HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
 
 /*
  * What follows is the result of much research on cross-browser styling.
@@ -95,21 +95,129 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+@font-body: "adelle-sans", helvetica, sans-serif;
+@font-heading: "adelle-sans", helvetica, sans-serif;
 
+body {
+  background: hsl(0, 0, 93%);
+  color: hsl(0, 0, 20%);
+  font-family: @font-body;
+  margin: 0;
+}
 
+a {
+  text-decoration: none;
+}
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: @font-heading;
+  margin: 0;
+}
 
+li {
+  list-style: circle;
+}
 
+li::marker {
+  color: hsl(0, 0, 60%);
+}
 
+.container {
+  background: hsl(0, 0, 95%);
+  box-shadow: 0 0 1.5em hsla(0, 0, 0, 4%);
+  margin: 0 auto;
+  max-width: 60em;
+  padding: 0;
+}
 
+header,
+section {
+  padding: 2em;
+}
 
+header,
+section.experience,
+section.skills {
+  background: hsl(0, 0, 97%);
+}
 
+header h1 {
+  font-size: 1.5em;
+  font-weight: 700;
+  line-height: 1em;
+  margin-top: 0;
+}
 
+.objective {
+  position: relative;
+}
 
+.objective p {
+  color: hsl(0, 0, 40%);
+  font-size: 1.125em;
+  font-weight: 300;
+  line-height: 1.067em;
+  margin: 1.778em;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
 
+section h1 {
+  font-size: 1.25em;
+  font-weight: 700;
+  line-height: 1em;
+}
 
+section h2 {
+  font-size: 1.125em;
+  font-weight: 600;
+  line-height: 1em;
+  position: relative;
+}
 
+section h2 .org {
+  color: hsl(0, 0, 40%);
+  font-weight: 500;
+}
 
+section h2 .location {
+  color: hsl(0, 0, 60%);
+  font-weight: 300;
+}
+
+section h2 .period {
+  color: hsl(0, 0, 80%);
+  font-weight: 500;
+  position: absolute;
+  right: 0;
+}
+
+section h2 .period .date {
+  color: hsl(0, 0, 60%);
+  font-family: @font-body;
+  font-size: 0.75em;
+  text-transform: uppercase;
+}
+
+.position,
+.degree,
+.level {
+  margin: 2em 0;
+}
+
+.tech {
+  color: hsl(0, 0, 40%);
+  font-size: 0.75em;
+  margin: 0.25em;
+  text-transform: uppercase;
+}
 
 /* ==========================================================================
    Helper classes
