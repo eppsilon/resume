@@ -106,6 +106,12 @@ body {
   margin: 0;
 }
 
+section div:last-child,
+ul:last-child,
+li:last-child {
+  margin-bottom: 0 !important;
+}
+
 a {
   text-decoration: none;
 }
@@ -121,18 +127,23 @@ h6 {
 }
 
 ul {
-  margin: 1em 0;
+  margin: 1.4em 0;
   padding: 0 0 0 1.8em;
 }
 
 li {
-  line-height: 1.15em;
-  list-style: circle;
-  margin: 0.3em 0;
+  line-height: 1.4em;
+  list-style: none;
+  margin: 0.4em 0;
+  position: relative;
+  text-indent: 0;
 }
 
-li::marker {
-  color: hsl(0, 0, 60%);
+li:before {
+  content: "•";
+  color: hsl(0, 0, 80%);
+  position: absolute;
+  left: -1em;
 }
 
 .container {
@@ -149,13 +160,9 @@ section {
   padding: 2em;
 }
 
-section.objective,
-section.education {
+.objective,
+.education {
   background: hsl(0, 0, 95%);
-}
-
-section div:last-child {
-  margin-bottom: 0;
 }
 
 header {
@@ -236,7 +243,7 @@ section h2 .period .date {
   color: hsl(0, 0, 40%);
   font-size: 1.125em;
   font-weight: 300;
-  line-height: 1.111em;
+  line-height: 1.112em;
   margin: 1.778em;
   padding: 0;
   position: absolute;
@@ -255,6 +262,28 @@ section h2 .period .date {
   font-size: 0.75em;
   margin: 0.25em;
   text-transform: uppercase;
+}
+
+section.skills .level {
+  display: inline-block;
+  margin-bottom: 0;
+  margin-right: 2%;
+  vertical-align: top;
+  width: 32%;
+}
+
+section.skills .level:last-child {
+  margin-right: 0;
+}
+
+.skills .skill-kind {
+  color: hsl(0, 0, 40%);
+  display: inline-block;
+  font-size: 0.75em;
+  font-weight: 300;
+  margin-right: 0.25em;
+  text-transform: uppercase;
+  vertical-align: bottom;
 }
 
 /* ==========================================================================
@@ -365,11 +394,6 @@ section h2 .period .date {
     text-shadow: none !important;
   }
 
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-
   a[href]:after {
     content: " (" attr(href) ")";
   }
@@ -422,5 +446,54 @@ section h2 .period .date {
   h2,
   h3 {
     page-break-after: avoid;
+  }
+  
+  /* Custom */
+  
+  body {
+    font-size: 0.8em;
+  }
+  
+  .container {
+    padding: 0;
+  }
+  
+  header {
+    padding: 1em 2em;
+    position: relative;
+  }
+  
+  header .contact {
+    top: 1.2em;
+  }
+  
+  section {
+    padding: 0.5em 2em;
+  }
+  
+  ul {
+    margin: 1em 0 0.5em 0;
+  }
+  
+  li {
+    line-height: 1.2em;
+    margin: 0.2em 0;
+  }
+  
+  .objective,
+  .objective h1,
+  .objective p {
+    margin: 0;
+  }
+  
+  .objective p {
+    margin: 0.42em 2em 0 0;
+  }
+  
+  .position,
+  .degree,
+  .level {
+    margin: 1em 0;
+    page-break-inside: avoid;
   }
 }
